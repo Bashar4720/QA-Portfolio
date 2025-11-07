@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Athlete management system in a gym</title>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1> Athlete management system in a gym </h1>
+  </header>
+
+  <section id="plans-section" aria-labelledby="plans-title">
+    <h2 id="plans-title">Training programs</h2>
+
+    <form id="planForm" autocomplete="off">
+      <div class="field">
+        <label for="planName"> Plan Name</label>
+        <input type="text" id="planName" name="planName" placeholder="For example: general reinforcement" required />
+      </div>
+
+      <div class="field">
+        <label for="planDesc">Description</label>
+        <input type="text" id="planDesc" name="planDesc" placeholder="Short Description" required />
+      </div>
+
+      <div class="field">
+        <label for="planDiff">Difficulty level</label>
+        <input type="number" id="planDiff" name="planDiff" min="1" max="5" placeholder="3" required />
+      </div>
+
+      <button type="submit" id="addPlanBtn">Add a program</button>
+    </form>
+
+    <ul id="planList" aria-live="polite"></ul>
+  </section>
+
+  <section id="trainees-section" aria-labelledby="trainees-title">
+    <h2 id="trainees-title">Training</h2>
+
+    <form id="traineeForm" autocomplete="off">
+      <div class="field">
+        <label for="traineeName">name</label>
+        <input type="text" id="traineeName" name="traineeName" placeholder="Full name " required />
+      </div>
+
+      <div class="field">
+        <label for="traineeEmail">email</label>
+        <input type="email" id="traineeEmail" name="traineeEmail" placeholder="name@example.com" required />
+      </div>
+
+      <div class="field">
+        <label for="traineeJoin">Date</label>
+        <input type="date" id="traineeJoin" name="traineeJoin" required />
+      </div>
+
+      <button type="submit" id="addTraineeBtn">Add</button>
+    </form>
+
+    <table id="traineesTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>email</th>
+          <th>Date </th>
+          <th>Active Program</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="traineeTableBody"> </tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
